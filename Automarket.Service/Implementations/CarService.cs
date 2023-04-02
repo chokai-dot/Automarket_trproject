@@ -196,7 +196,7 @@ namespace Automarket.Service.Implementations
                     return new BaseResponse<Car>()
                     {
                         Description = "Car not found",
-                        StatusCode = StatusCode.CarNotFound
+                        StatusCode = StatusCode.ProductNotFound
                     };
                 }
 

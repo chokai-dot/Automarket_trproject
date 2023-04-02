@@ -1,7 +1,4 @@
-﻿using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Automarket.Domain.ViewModels.Car;
+﻿using Automarket.Domain.ViewModels.Car;
 using Automarket.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -13,7 +10,7 @@ namespace Automarket.Controllers
     {
         private readonly ICarService _carService;
 
-        public CarController(ICarService carService)
+        public CarController(ICarService carService)        
         {
             _carService = carService;
         }
