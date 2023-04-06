@@ -20,21 +20,22 @@ namespace Automarket.DAL
         {
             modelBuilder.Entity<User>(builder =>
             {
+                builder.ToTable("Users").HasKey(x => x.Id);
+
                 builder.HasData(new User
                 {
                     Id = 1,
                     Name = "Raufat",
                     Password = HashPasswordHelper.HashPassowrd("123456"),
+                    Email = "raufatnurarov@gmail.com",
                     Role = Role.Admin
                 });
 
-                builder.ToTable("User").HasKey(x => x.Id);
-
-                builder.Property(x => x.Id)
-                    .ValueGeneratedOnAdd();
+                builder.Property(x => x.Id).ValueGeneratedOnAdd();
 
                 builder.Property(x => x.Password).IsRequired();
                 builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
+
             });
         }
     }

@@ -1,16 +1,28 @@
 ﻿using Automarket.Domain.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 
 namespace Automarket.Domain.Entity
 {
     public class User
     {
-        public long Id { get; set; }
+       
+            public int Id { get; set; }
 
-        public string Password { get; set; }
+            [Required]
+            [StringLength(50)]
+            public string Name { get; set; }
 
-        public string Name { get; set; }
+            [Required]
+            [StringLength(100)]
+            public string Email { get; set; }
 
-        public Role Role { get; set; }
+            [Required]
+            [StringLength(50)]
+            public string Password { get; set; }
+
+            public Role Role { get; set; } = Role.User;
+      
+        
     }
 }
